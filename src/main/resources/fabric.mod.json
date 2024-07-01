@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "questmod",
+	"version": "${version}",
+	"name": "QuestMod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"trrt004"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT Licence",
+	"icon": "assets/questmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"trrt004.questmod.QuestMod"
+		],
+		"client": [
+			"trrt004.questmod.QuestModClient"
+		],
+		"fabric-datagen": [
+			"trrt004.questmod.QuestModDataGenerator"
+		]
+	},
+	"mixins": [
+		"questmod.mixins.json",
+		{
+			"config": "questmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
